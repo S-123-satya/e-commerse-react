@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import Item from "./Item";
 import CartContext from "../../Store/cart-context";
+import Title from "../UI/Title";
+import Cart from "./../Cart/Cart"
 
 const productsArr = [
   {
@@ -31,19 +33,8 @@ const Body = (props) => {
 
   return (
     <>
-      <div className="bg-opacity-75 bg-dark text-white">
-        <Container key="title" className="text-center pb-5">
-          <h1 className="" style={{ fontSize: "7vw" }}>
-            The Generics
-          </h1>
-        </Container>
-      </div>
-      <h1
-        className="text-center fst-italic"
-        style={{ fontSize: "40px", font: "italic" }}
-      >
-        Music
-      </h1>
+      {cartCtx.isShow && <Cart/>}
+      <Title>Music</Title>
       <Container key="item">
         <Row sm={3} className="ms-5 gap-5">
           {productsArr.map((item, idx) => (
