@@ -9,8 +9,12 @@ const cartReducer = (state, action) => {
   if (action.type === "TOGGLE_CART") {
     return { ...state, isShow: !state.isShow };
   }
+  if (action.type === "PURCHASE") {
+    return { ...state, items:[] };
+  }
   if (action.type === "REMOVE") {
-    return { ...state, isShow: !state.isShow };
+    const updateItem=state.items.filter((item)=>item.id!==action.id)
+    return { items: updateItem, isShow: state.isShow };
   }
   if (action.type === "ADD") {
     let updateItem=[];
@@ -32,6 +36,9 @@ const CartProvider = (props) => {
   const addItemHandler = (item) => {
     cartAction({ type: "ADD", item: item });
   };
+  const purchaseHandler = () => {
+    cartAction({ type: "PURCHASE" });
+  };
   return (
     <CartContext.Provider
       value={{
@@ -40,6 +47,7 @@ const CartProvider = (props) => {
         toggleCart: toggleCartHandler,
         removeItem: removeItemHandler,
         addItem: addItemHandler,
+        purchase:purchaseHandler,
       }}
     >
       {props.children}

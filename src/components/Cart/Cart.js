@@ -7,7 +7,7 @@ import CartContext from "../../Store/cart-context";
 const Cart = (props) => {
   const cartCtx=useContext(CartContext);
   return (
-    <div className=" d-block position-fixed h-100">
+    <div className="z-1 d-block position-fixed h-100">
       <div className="position-fixed my-5 bg-white top-0 h-100 end-0">
         <div className="text-end">
           <Button onClick={cartCtx.toggleCart}>X</Button>
@@ -28,7 +28,7 @@ const Cart = (props) => {
           </tbody>
         </Table>
         <div className="text-center ">
-          <Button variant="info"  size='lg'  >Purchase</Button>
+          <Button variant="info" onClick={cartCtx.purchase}  size='lg'  >Purchase</Button>
         </div>
       </div>
     </div>

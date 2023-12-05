@@ -6,9 +6,9 @@ import classes from './Item.module.css'
 const Item = (props) => {
   const cartCtx=useContext(CartContext)
   return (
-    <Card className="m-5 p-2" style={{ width: "15rem", }}>
+    <Card className="m-5 z-0 p-2" style={{ width: "15rem", }}>
       <Card.Title className="text-center fs-5 py-2"> {props.item.title} </Card.Title>
-      <div className="overflow-hidden w-100 h-100 rounded">
+      <div className="overflow-hidden w-100  h-100 rounded">
         <Card.Img src={props.item.imageUrl} className={classes['item-img']} />
       </div>
       <Card.Body className="d-flex justify-content-between">

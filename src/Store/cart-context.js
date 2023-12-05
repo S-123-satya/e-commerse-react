@@ -5,7 +5,8 @@ const CartContext=React.createContext({
     isShow:false,
     toggleCart:()=>{},
     removeItem:(id)=>{},
-    addItem:()=>{}
+    addItem:()=>{},
+    purchase:()=>{}
 })
 
 export default CartContext;

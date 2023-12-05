@@ -35,7 +35,7 @@ const Login = () => {
     setIsSubmit(false);
     passwordRef.current.value = "";
     emailRef.current.value = "";
-    authCtx.login(response.data.idToken);
+    authCtx.login(response.data.idToken,response.data.email);
   };
 
   return (
