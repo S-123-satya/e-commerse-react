@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Navbar, Nav, Container, Button, Badge, } from "react-bootstrap";
-import {NavLink} from "react-router-dom"
+import { Navbar, Nav, Container, Button, Badge } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import CartContext from "../Store/cart-context";
+import AuthContext from "../Store/auth-context";
 
 const Header = () => {
   const cartCtx = useContext(CartContext);
+  const authCtx = useContext(AuthContext);
   return (
     <>
       <Navbar
@@ -22,6 +24,11 @@ const Header = () => {
             <NavLink to="/about">
               <h6>About</h6>
             </NavLink>
+            {!authCtx.isLogin && (
+              <NavLink to="/login">
+                <h6>Login</h6>
+              </NavLink>
+            )}
             <NavLink to="/contact">
               <h6>Contact</h6>
             </NavLink>

@@ -3,7 +3,7 @@ import { Col, Container, Row, Button } from "react-bootstrap";
 import Item from "./Item";
 import CartContext from "../../Store/cart-context";
 import Title from "../UI/Title";
-import Cart from "./../Cart/Cart"
+import Cart from "../Cart/Cart"
 
 const productsArr = [
   {
@@ -28,7 +28,7 @@ const productsArr = [
   },
 ];
 
-const Body = (props) => {
+const Store = (props) => {
   const cartCtx=useContext(CartContext);
 
   return (
@@ -51,4 +51,4 @@ const Body = (props) => {
   );
 };
 
-export default Body;
+export default Store;

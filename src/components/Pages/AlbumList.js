@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 const AlbumList = (props) => {
   return (
     <>
-      <tr className="">
+      <tr >
         <td>{props.item.date}</td>
         <td>{props.item.place}</td>
         <td>{props.item.address}</td>

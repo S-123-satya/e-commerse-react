@@ -37,11 +37,9 @@ const Album = (props) => {
   return (
     
     <Container className='w-50 text-center'>
-        
-                <Table  className=''>
-                {dummy_album.map(item=><AlbumList className='' item={item}/>)}
-                </Table>
-            
+                <Table  >
+                {dummy_album.map(item=><AlbumList key={item.date} item={item}/>)}
+                </Table>      
     </Container>
   )
 }

@@ -2,30 +2,24 @@ import React, { useEffect, useState } from "react";
 import Title from "../UI/Title";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import axios from "axios";
-const url='https://ecommerce-react-ae496-default-rtdb.firebaseio.com/user.json'
+const url = "https://auth-react-21ca9-default-rtdb.firebaseio.com/user.json";
 const Contact = () => {
   const [userState,setUserState]= useState();
   const submitHandler=async (e)=>{
     e.preventDefault();
-    console.log(`hii`);
-    console.log(userState);
     const response=await axios.post(url,userState);
-    console.log(response);
     const data= await axios.get(url);
-    console.log(data);
   }
   useEffect(async()=>{
     const data=await axios.get(url);
     for(const key in data.data){
-      console.log(data.data[key].name);
-      console.log(data.data[key].email);
-      console.log(data.data[key].number);
     }
   },[])
   return (
     <Container>
       <Row>
         <Col>
+        <Title>Contact</Title>
           <Form onSubmit={submitHandler}>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Name </Form.Label>
